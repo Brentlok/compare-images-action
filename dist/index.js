@@ -32404,6 +32404,7 @@ const main = async () => {
         })
     
         const data = await res.json()
+        console.log('Image has been uploaded successfully! 🚀', data.data.image.url)
         core.setOutput('imageURL', data.data.image.url)
     } catch (error) {
         core.setFailed(error.message)
