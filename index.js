@@ -2,7 +2,7 @@ const core = require('@actions/core')
 const fs = require('fs')
 const { imgDiff } = require('img-diff-js')
 
-(async () => {
+const main = async () => {
     try {
         const diffPath = core.getInput('diff')
         const result = await imgDiff({
@@ -28,4 +28,6 @@ const { imgDiff } = require('img-diff-js')
     } catch (error) {
         core.setFailed(error.message)
     }    
-})()
+}
+
+main()

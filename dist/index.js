@@ -32382,7 +32382,7 @@ const core = __nccwpck_require__(4181)
 const fs = __nccwpck_require__(7147)
 const { imgDiff } = __nccwpck_require__(903)
 
-(async () => {
+const main = async () => {
     try {
         const diffPath = core.getInput('diff')
         const result = await imgDiff({
@@ -32408,7 +32408,9 @@ const { imgDiff } = __nccwpck_require__(903)
     } catch (error) {
         core.setFailed(error.message)
     }    
-})()
+}
+
+main()
 
 })();
 
