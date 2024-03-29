@@ -10,9 +10,10 @@ const main = async () => {
             expectedFilename: core.getInput('image2'),
             diffFilename: diffPath,
         })
-    
+        const percentage = result.diffCount / (result.width * result.height) / 100
+        
         console.log('Images have been compared successfully! 🧙‍♂️')
-        console.log('Difference:', result.diffCount)
+        console.log('Difference:', result.diffCount, 'pixels', percentage, '%')
     
         const image = new File([fs.readFileSync(diffPath)], diffPath)
         const form = new FormData()
