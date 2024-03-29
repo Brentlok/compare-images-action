@@ -14,6 +14,10 @@ const main = async () => {
         
         console.log('Images have been compared successfully! 🧙‍♂️')
         console.log('Difference:', result.diffCount, 'pixels', percentage, '%')
+
+        if (core.getInput('tolerance') >= percentage) {
+            return
+        }
     
         const image = new File([fs.readFileSync(diffPath)], diffPath)
         const form = new FormData()
@@ -27,6 +31,8 @@ const main = async () => {
         const data = await res.json()
         console.log('Image has been uploaded successfully! 🚀', data.data.image.url)
         core.setOutput('url', data.data.image.url)
+
+        process.exit(1)
     } catch (error) {
         core.setFailed(error.message)
     }    

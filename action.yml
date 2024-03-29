@@ -11,6 +11,10 @@ inputs:
     description: 'Diff image to upload'
     required: true
     default: 'diff.png'
+  tolerance:
+    description: 'Tolerance for the comparison'
+    required: true
+    default: 0
   imgbbToken:
     description: 'Token for imgbb to upload diff image'
     required: true
