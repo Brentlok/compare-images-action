@@ -1,0 +1,22 @@
+name: 'Compare images'
+description: 'Compare two images and upload the diff image to imgbb'
+inputs:
+  image1:
+    description: 'First image to compare'
+    required: true
+  image2:
+    description: 'Second image to compare'
+    required: true
+  diff:
+    description: 'Diff image to upload'
+    required: true
+    default: 'diff.png'
+  imgbbToken:
+    description: 'Token for imgbb to upload diff image'
+    required: true
+outputs:
+  imageURL:
+    description: 'URL of the uploaded diff image'
+runs:
+  using: 'node20'
+  main: 'index.js'
