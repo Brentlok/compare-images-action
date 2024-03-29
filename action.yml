@@ -15,7 +15,7 @@ inputs:
     description: 'Token for imgbb to upload diff image'
     required: true
 outputs:
-  imageURL:
+  url:
     description: 'URL of the uploaded diff image'
 runs:
   using: 'node20'

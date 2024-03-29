@@ -32390,7 +32390,7 @@ const main = async () => {
             expectedFilename: core.getInput('image2'),
             diffFilename: diffPath,
         })
-        const percentage = result.diffCount / (result.width * result.height) / 100
+        const percentage = result.diffCount / (result.width * result.height) * 100
         
         console.log('Images have been compared successfully! 🧙‍♂️')
         console.log('Difference:', result.diffCount, 'pixels', percentage, '%')
@@ -32406,7 +32406,7 @@ const main = async () => {
     
         const data = await res.json()
         console.log('Image has been uploaded successfully! 🚀', data.data.image.url)
-        core.setOutput('imageURL', data.data.image.url)
+        core.setOutput('url', data.data.image.url)
     } catch (error) {
         core.setFailed(error.message)
     }    
