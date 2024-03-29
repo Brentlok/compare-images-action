@@ -19,4 +19,4 @@ outputs:
     description: 'URL of the uploaded diff image'
 runs:
   using: 'node20'
-  main: 'index.js'
+  main: 'dist/index.js'
